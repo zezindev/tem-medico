@@ -2,6 +2,9 @@ html, body{
     margin: 0;
     padding: 0;
 }
+html{
+    font-size: 10px;
+}
 
 :root {
     --primary-color: #F5F6F8;
@@ -35,10 +38,11 @@ nav .about{
     text-decoration: none;
     color: var(--text-dark-color);
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.8rem;
 
     padding: 20px;
     border-radius: 100%;
+    background-color: var(--card-color);
 }
 
 nav .bi{
@@ -52,7 +56,7 @@ nav .bi{
     align-items: center;
     gap: 16px; 
 
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 .menu-date{
@@ -69,6 +73,119 @@ nav .bi{
 
 .main-title h1{
     color: var(--text-dark-color);
-    font-size: 128px;
+    font-size: 12.8rem;
     font-weight: 700;
+}
+
+.counting-md{
+    padding: 24px 0;
+}
+
+.counting-md h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark-color);
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 24px;
+}
+
+.card {
+    width: calc(25% - 72px);
+    background: var(--card-colorr);
+    box-shadow: 0 5px 16px -6px var(--border-color);
+    border-radius: 24px;
+    border: 1px solid var(--card-border-color);
+    padding: 24px;
+    transition: background-color 300ms ease;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: calc(33% - 72px); /* 3 por linha */
+    }
+} 
+
+@media (max-width: 1080px) {
+    .card {
+        width: calc(45% - 24px); /* 3 por linha */
+    }
+}
+
+@media (max-width: 860px) {
+    .card {
+        width: 100%; /* 1 por linha */
+    }
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: var(--card-border-color);
+    transition: 300ms ease;
+}
+
+.card-header h2 {
+    color: var(--text-dark-color);
+    font-size: clamp(2rem, 2.2vw, 3.2rem);
+    font-weight: bold;
+
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.doctor-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 160px;
+
+    color: var(--text-dark-color);
+    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 1.8vw, 2.2rem);
+}
+
+.doctor-photo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card-body {
+    margin: 24px 0;
+}
+
+.insurance-logos img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.card-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+
+    font-size: 1.6rem;
+    color: var(--text-dark-color);
+    font-weight: 400;
+}
+
+.sc-cl{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.location i {
+   margin-right: 16px;
+}
+
+.schedule i {
+    margin-right: 16px;
+}
+
+.clinic span{
+    color: var(--text-color-light);
 }
