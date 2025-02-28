@@ -87,6 +87,31 @@ nav .bi{
     color: var(--text-dark-color);
 }
 
+.bt-form-container{
+    position: relative;
+}
+
+.bt-form{
+    height: 88px;
+    width: 88px; 
+
+    position: fixed;
+    z-index: 2;
+    right:0;
+    margin-right: 50px;
+    bottom: 35%;
+
+    background-color: var(--accent-color);
+    box-shadow: 0 5px 16px -8px var(--accent-color);
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap; 
