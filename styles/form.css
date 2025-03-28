@@ -1,0 +1,47 @@
+:root {
+    --primary-color: #F5F6F8;
+    --card-color: #FFFFFF;
+    --card-border-color: #E7E8EA; 
+    --border-color: #B8BAC1; 
+    --text-color-light: #888C95; 
+    --accent-color: #181818; 
+    --text-dark-color: #181818;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    align-self: flex-start;
+
+    font-size: 1.4rem;
+}
+
+form input,
+form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--text-color-light);
+}
+
+/* Desativar scroll ao abrir o modal */
+body.modal-open {
+    overflow: hidden;
+}

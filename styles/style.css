@@ -12,7 +12,7 @@ html{
     --card-border-color: #E7E8EA; 
     --border-color: #B8BAC1; 
     --text-color-light: #888C95; 
-    --accent-color: #2B48EC; 
+    --accent-color: #181818; 
     --text-dark-color: #181818;
 }
 
@@ -27,6 +27,7 @@ header{
     width: 100%;
 }
 
+/* Menu Principal */
 nav{
     display: flex;
     justify-content: space-between;
@@ -87,6 +88,39 @@ nav .bi{
     color: var(--text-dark-color);
 }
 
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Botão Flutuante */
 .bt-form-container{
     position: relative;
 }
@@ -112,105 +146,20 @@ nav .bi{
     cursor: pointer;
 }
 
-.card-container {
+
+/* Rodapé */
+footer{
     display: flex;
-    flex-wrap: wrap; 
-    gap: 24px;
-}
-
-.card {
-    width: calc(25% - 72px);
-    background: var(--card-colorr);
-    box-shadow: 0 5px 16px -6px var(--border-color);
-    border-radius: 24px;
-    border: 1px solid var(--card-border-color);
-    padding: 24px;
-    transition: background-color 300ms ease;
-}
-
-@media (max-width: 1200px) {
-    .card {
-        width: calc(33% - 72px); /* 3 por linha */
-    }
-} 
-
-@media (max-width: 1080px) {
-    .card {
-        width: calc(45% - 24px); /* 3 por linha */
-    }
-}
-
-@media (max-width: 860px) {
-    .card {
-        width: 100%; /* 1 por linha */
-    }
-}
-
-.card:hover {
-    cursor: pointer;
-    background-color: var(--card-border-color);
-    transition: 300ms ease;
-}
-
-.card-header h2 {
-    color: var(--text-dark-color);
-    font-size: clamp(2rem, 2.2vw, 3.2rem);
-    font-weight: bold;
-
-    margin-bottom: 16px;
-    margin-top: 0;
-}
-
-.doctor-info {
-    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 160px;
 
-    color: var(--text-dark-color);
-    font-size: 2.2rem;
-    font-size: clamp(1.6rem, 1.8vw, 2.2rem);
-}
+    padding: 40px 0;
+    margin-top: 40px;
 
-.doctor-photo {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.card-body {
-    margin: 24px 0;
-}
-
-.insurance-logos img {
-    width: 32px;
-    height: 32px;
-    margin-right: 8px;
-}
-
-.card-footer {
     border-top: 1px solid var(--border-color);
-    padding-top: 24px;
+}
 
-    font-size: 1.6rem;
+.ft-info span{
     color: var(--text-dark-color);
-    font-weight: 400;
-}
-
-.sc-cl{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16px;
-}
-
-.location i {
-   margin-right: 16px;
-}
-
-.schedule i {
-    margin-right: 16px;
-}
-
-.clinic span{
-    color: var(--text-color-light);
+    font-size: 14px;
 }
