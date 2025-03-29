@@ -99,6 +99,10 @@
     margin-right: 16px;
 }
 
+.schedule span{
+    text-transform: capitalize;
+}
+
 .clinic span{
     color: var(--text-color-light);
 }
