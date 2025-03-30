@@ -1,44 +1,101 @@
 :root {
     --primary-color: #F5F6F8;
-    --card-color: #FFFFFF;
+    --bt-icon-color: rgb(255, 255, 255, 0.45);
+    --card-color: #ffffff;
     --card-border-color: #E7E8EA; 
-    --border-color: #B8BAC1; 
-    --text-color-light: #888C95; 
-    --accent-color: #181818; 
+    --border-color: #B8BAC1;
+    --text-color-light: #B8BAC1; 
     --text-dark-color: #181818;
+    --bt-color-disabled:#95A3F5;
+    --bt-color-hover:#2B48EC;
+    --bt-color-clicked:#142DB8;
 }
 
 form {
     display: flex;
     flex-direction: column;
+
+    justify-content: start;
 }
 
 form label {
     margin: 10px 0 5px;
-    align-self: flex-start;
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-    font-size: 1.4rem;
+.label-form{
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -3%;
+
+    color: var(--text-color-light);
+}
+
+.time-schedule{
+    display: flex;
+    align-items: center;
+}
+
+.time-schedule input{
+    max-width: 133px;
+}
+
+.time-schedule label{
+    margin-top: -7px;
+    padding: 0 16px;
+}
+
+.label-form-schedule{
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -3%;
+
+    color: var(--text-color-light);
 }
 
 form input,
 form select {
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
+    border-bottom: solid 1px var(--border-color);
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 form button {
-    padding: 10px;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
+    width: 139px;
+    height: 72px;
+    top: 936px;
+    left: 72px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--bt-color-disabled);
+    margin-top: 122px;
+    padding-top: 24px;
+    padding-right: 40px;
+    padding-bottom: 24px;
+    padding-left: 40px;
+    gap: 16px;
+    
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -3%;
+    color: var(--card-color);
+    transition: background-color 200ms ease-in-out;
+
 }
 
 form button:hover {
-    background-color: var(--text-color-light);
+    background-color: var(--bt-color-hover);
 }
 
 /* Desativar scroll ao abrir o modal */

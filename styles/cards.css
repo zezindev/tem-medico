@@ -1,3 +1,16 @@
+:root {
+    --primary-color: #F5F6F8;
+    --bt-icon-color: rgb(255, 255, 255, 0.45);
+    --card-color: #ffffff;
+    --card-border-color: #E7E8EA; 
+    --border-color: #B8BAC1; 
+    --text-color-light: #B8BAC1; 
+    --text-dark-color: #181818;
+    --bt-color-disabled:#95A3F5;
+    --bt-color-hover:#2B48EC;
+    --bt-color-clicked:#142DB8;
+}
+
 /* Card Container */
 .card-container {
     display: flex;
@@ -8,12 +21,11 @@
 /* Cards */
 .card {
     width: calc(25% - 72px);
-    background: var(--card-colorr);
-    box-shadow: 0 5px 16px -6px var(--border-color);
+    background: var(--card-color);
     border-radius: 24px;
     border: 1px solid var(--card-border-color);
     padding: 24px;
-    transition: background-color 300ms ease;
+    transition: background-color 200ms ease-in-out;
 }
 
 @media (max-width: 1200px) {

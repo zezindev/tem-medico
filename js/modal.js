@@ -49,15 +49,33 @@ function formatSpecialtyName(specialty) {
         .replace(/\b\p{L}/gu, char => char.toUpperCase()); // Capitaliza cada palavra, suportando caracteres acentuados
 }
 
-// Abrir o modal
+// Abrir o modal com animação suave
 btForm.addEventListener('click', () => {
     modal.style.display = 'block';
+    modal.style.animation = "slide-in 0.5s ease-out forwards";
+    document.body.classList.add("modal-open"); // Impede o scroll quando o modal estiver aberto
+    document.body.style.overflow = 'hidden';  // Desativa o scroll quando o modal está visível
 });
 
-// Fechar o modal
+// Fechar o modal com animação suave
 closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+    modal.style.animation = "slide-out 0.5s ease-in forwards";
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.classList.remove("modal-open");
+        document.body.style.overflow = ''; // Restaura o scroll após o modal ser fechado
+    }, 500);
 });
+
+// Função para verificar se o usuário escolheu "Outros" no select de planos e exibir o campo adicional
+function checkOtherPlan(select) {
+    const otherPlanInput = document.getElementById("otherPlan");
+    if (select.value === "outros") {
+        otherPlanInput.style.display = "block";
+    } else {
+        otherPlanInput.style.display = "none";
+    }
+}
 
 // Submeter o formulário e criar o card
 form.addEventListener('submit', (e) => {
@@ -164,6 +182,9 @@ form.addEventListener('submit', (e) => {
 
     // Fechar o modal
     modal.style.display = 'none';
+
+    // Restaurar o scroll
+    document.body.style.overflow = 'auto'; // Restaura o scroll da página
 
     // Limpar o formulário
     form.reset();

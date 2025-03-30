@@ -14,7 +14,7 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="#" class="about">Sobre</a>
+            <button class="about"><a href="#">Sobre</a></button>
     
             <div class="menu-icons">
                 <i class="bi bi-search"></i>
@@ -38,106 +38,31 @@
     <!-- Modal -->
     <div id="formModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Preencha o formulário</h2>
-            <p>Por favor, preencha as informações abaixo para criar um card:</p>
+            <div class="form-header">
+                <span class="close-btn">&times;</span>
+                <button class="clean-button"><a href="#">Limpar</a></button>
+            </div>
             
             <form id="form">
-                <!-- Alteração do campo specialty para um select -->
-                <label for="specialty">Especialidade:</label>
-                <select id="specialty" name="specialty" required>
-                    <option value="" disabled selected>Selecione a especialidade</option>
-                    <option value="cardiologista">Cardiologista</option>
-                    <option value="pediatra">Pediatra</option>
-                    <option value="dermatologista">Dermatologista</option>
-                    <option value="ortopedista">Ortopedista</option>
-                    <option value="ginecologista">Ginecologista</option>
-                    <option value="neurologista">Neurologista</option>
-                    <option value="oftalmologista">Oftalmologista</option>
-                    <option value="endocrinologista">Endocrinologista</option>
-                    <option value="clinico-geral">Clínico Geral</option>
-                    <option value="psiquiatra">Psiquiatra</option>
-                    <option value="urologista">Urologista</option>
-                    <option value="reumatologista">Reumatologista</option>
-                    <option value="fisioterapeuta">Fisioterapeuta</option>
-                    <option value="nutricionista">Nutricionista</option>
-                    <option value="odontologo">Odontólogo</option>
-                </select>
-    
-                <label for="photo">Foto do médico:</label>
+                <input type="text" id="name" name="name" placeholder="Médico(a)" required class="label-form">  
+
                 <input type="file" id="photo" name="photo" accept="image/*" required>
+                 
+                <input type="text" id="name" name="name" placeholder="Especialidade" required class="label-form"> 
+                <input type="text" id="name" name="name" placeholder="Plano de saúde" required class="label-form"> 
+                <input type="text" id="name" name="name" placeholder="Cidade" required class="label-form"> 
+                <input type="text" id="name" name="name" placeholder="Clínica" required class="label-form"> 
+                
+
+                <div class="time-schedule">
+                    <label for="start-hours">De</label>
+                    <input type="text" id="start-hours" name="start-hours" placeholder="Ex: 08:00" required class="label-form-schedule">
+            
+                    <label for="end-hours">à</label>
+                    <input type="text" id="end-hours" name="end-hours" placeholder="Ex: 18:00" required class="label-form-schedule">
+                </div>
         
-                <label for="name">Nome do médico:</label>
-                <input type="text" id="name" name="name" required>
-        
-                <label for="plans">Planos médicos aceitos:</label>
-                <select id="plans" name="plans" onchange="checkOtherPlan(this)" required>
-                    <option value="" disabled selected>Selecione um plano</option>
-                    <option value="unimed">Unimed</option>
-                    <option value="hapvida">Hapvida</option>
-                    <option value="saudeamerica">Saúde América</option>
-                    <option value="bradesco">Bradesco Saúde</option>
-                    <option value="amil">Amil</option>
-                    <option value="sulamerica">SulAmérica</option>
-                    <option value="medsenior">MedSênior</option>
-                    <option value="outros">Outros</option>
-                </select>
-                <input type="text" id="otherPlan" name="otherPlan" placeholder="Digite o nome do plano" style="display: none;">
-        
-                <!-- Alteração do campo city para incluir todas as cidades de Pernambuco -->
-                <label for="city">Cidade:</label>
-                <select id="city" name="city" required>
-                    <option value="" disabled selected>Selecione uma cidade</option>
-                    <option value="abreu-e-lima">Abreu e Lima</option>
-                    <option value="afogados-da-ingazeira">Afogados da Ingazeira</option>
-                    <option value="afogados">Afogados</option>
-                    <option value="agrestina">Agrestina</option>
-                    <option value="agua-preta">Água Preta</option>
-                    <option value="alagoinha">Alagoinha</option>
-                    <option value="albertona">Albertona</option>
-                    <option value="alto-do-bonfim">Alto do Bonfim</option>
-                    <option value="amaraji">Amaraji</option>
-                    <option value="angelim">Angelim</option>
-                    <option value="arapiraca">Arapiraca</option>
-                    <option value="belém-de-pará">Belém de Pará</option>
-                    <option value="belo-jardim">Belo Jardim</option>
-                    <option value="betania">Betânia</option>
-                    <option value="buíque">Buíque</option>
-                    <option value="cabo-de-santo-agostinho">Cabo de Santo Agostinho</option>
-                    <option value="camaragibe">Camaragibe</option>
-                    <option value="camocim-de-sao-felix">Camocim de São Félix</option>
-                    <option value="caruaru">Caruaru</option>
-                    <option value="catende">Catende</option>
-                    <option value="cedro">Cedro</option>
-                    <option value="ciz">Ciz</option>
-                    <option value="claro">Claro</option>
-                    <option value="goiana">Goiana</option>
-                    <option value="jaboatao-dos-guararapes">Jaboatão dos Guararapes</option>
-                    <option value="serra-talhada">Serra Talhada</option>
-                    <option value="maragogi">Maragogi</option>
-                    <option value="garanhuns">Garanhuns</option>
-                    <option value="pesqueira">Pesqueira</option>
-                    <option value="petrolina">Petrolina</option>
-                    <option value="paudalho">Paudalho</option>
-                    <option value="salgueiro">Salgueiro</option>
-                    <option value="gravatá">Gravatá</option>
-                    <option value="arcoverde">Arcoverde</option>
-                    <option value="arara">Arara</option>
-                    <option value="balança">Balança</option>
-                    <option value="recife">Recife</option>
-                    <!-- Adicionei muitas cidades, você pode continuar com a lista completa -->
-                </select>
-        
-                <label for="start-hours">Início do atendimento:</label>
-                <input type="text" id="start-hours" name="start-hours" placeholder="Ex: 08:00" required>
-        
-                <label for="end-hours">Fim do expediente:</label>
-                <input type="text" id="end-hours" name="end-hours" placeholder="Ex: 18:00" required>
-        
-                <label for="clinic">Clínica de atendimento:</label>
-                <input type="text" id="clinic" name="clinic" required>
-        
-                <button type="submit">Criar Card</button>
+                <button type="submit">Enviar</button>
             </form>
         </div>
     </div>

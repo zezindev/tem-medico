@@ -8,12 +8,15 @@ html{
 
 :root {
     --primary-color: #F5F6F8;
-    --card-color: #FFFFFF;
+    --bt-icon-color: rgb(255, 255, 255, 0.45);
+    --card-color: #ffffff;
     --card-border-color: #E7E8EA; 
     --border-color: #B8BAC1; 
-    --text-color-light: #888C95; 
-    --accent-color: #181818; 
+    --text-color-light: #B8BAC1; 
     --text-dark-color: #181818;
+    --bt-color-disabled:#95A3F5;
+    --bt-color-hover:#2B48EC;
+    --bt-color-clicked:#142DB8;
 }
 
 body{
@@ -36,20 +39,27 @@ nav{
 }
 
 nav .about{
+    border: none;
+    background-color: var(--bt-icon-color);  
+
+    padding: 24px 72px;
+    border-radius: 100px;
+    
+}
+
+nav .about a{
     text-decoration: none;
     color: var(--text-dark-color);
     font-weight: 600;
-    font-size: 1.8rem;
-
-    padding: 20px;
-    border-radius: 100%;
-    background-color: var(--card-color);
+    font-size: 2rem;
 }
 
 nav .bi{
     padding: 20px;
 
     color: var(--text-dark-color);
+    background-color: var(--bt-icon-color);
+    border-radius: 100px;
 }
 
 .menu-icons {
@@ -103,8 +113,7 @@ nav .bi{
     margin-right: 50px;
     bottom: 35%;
 
-    background-color: var(--accent-color);
-    box-shadow: 0 5px 16px -8px var(--accent-color);
+    background-color: var(--text-dark-color);
     border-radius: 100%;
 
     display: flex;
@@ -112,6 +121,11 @@ nav .bi{
     justify-content: center;
 
     cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.bt-form:hover{
+    background-color: var(--bt-color-hover);
 }
 
 /* Rodapé */
