@@ -49,7 +49,7 @@
     animation: slide-in-content 0.2s ease-out forwards;
 }
 
-/* Animação de entrada do conteúdo */
+/* Animação de entrada do conteúdo */ 
 @keyframes slide-in-content {
     0% {
         right: -100%;

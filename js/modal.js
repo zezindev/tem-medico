@@ -65,7 +65,7 @@ closeBtn.addEventListener('click', () => {
     const modalContent = modal.querySelector('.modal-content');
     modalContent.style.animation = 'slide-out-content 0.5s ease-out forwards'; // Animação de saída do conteúdo
 
-    // Esconde o modal após a animação terminar
+    // Esconde o modal após a animação terminar 
     setTimeout(() => {
         modal.classList.remove('show'); // Remove o fade-in do fundo
         modal.style.display = 'none'; // Esconde o modal

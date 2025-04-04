@@ -36,7 +36,7 @@ form label {
 
 .time-schedule{
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 
 .time-schedule input{
