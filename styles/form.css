@@ -6,9 +6,9 @@
     --border-color: #B8BAC1; 
     --text-color-light: #B8BAC1; 
     --text-dark-color: #181818;
-    --bt-color-disabled:#95A3F5;
-    --bt-color-hover:#2B48EC;
-    --bt-color-clicked:#142DB8;
+    --bt-color-disabled: #95A3F5;
+    --bt-color-hover: #2B48EC;
+    --bt-color-clicked: #142DB8;
 }
 
 form {
