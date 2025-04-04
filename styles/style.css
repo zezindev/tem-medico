@@ -8,7 +8,7 @@ html{
 
 :root {
     --primary-color: #F5F6F8;
-    --bt-icon-color: rgb(255, 255, 255, 0.45);
+    --bt-icon-color: #f5f6f83d;
     --card-color: #ffffff;
     --card-border-color: #E7E8EA; 
     --border-color: #B8BAC1; 
@@ -23,29 +23,38 @@ body{
     background-color: var(--primary-color);
     font-family: 'Helvetica';
 
-    padding: 0 50px 0 50px;
+    padding: 0 50px 0 72px;
 }
 
-header{
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    padding: 0;
+
+   
 }
 
-/* Menu Principal */
-nav{
+/* Main Menu */
+nav.menu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 72px;
+}  
 
-    margin-top: 70px;
-}
+nav .about {
+    border: 1px solid rgba(255, 255, 255, 0.3); /* borda leve e translúcida */
+    background-color: rgba(255, 255, 255, 0.15); /* fundo translúcido */
+    backdrop-filter: blur(10px); /* efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* suporte para Safari */
 
-nav .about{
-    border: none;
-    background-color: var(--bt-icon-color);  
-
-    padding: 24px 72px;
+    padding: 24px;
     border-radius: 100px;
-    
 }
+
 
 nav .about a{
     text-decoration: none;
@@ -70,19 +79,52 @@ nav .bi{
     font-size: 1.8rem;
 }
 
-.menu-date{
-    color: var(--text-dark-color);
-    font-weight: 600;
+.icons-bt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    padding: 24px;
+}
+
+.icons-bt img {
+    width: 18px;
+    height: 18px;
+}
+
+.menu-date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+
+    padding: 24px;
+}
+
+.icons-bt, .menu-date:hover{
+    cursor: pointer;
+}
+
+
+.hero {
+    height: 120vh;
     display: flex;
     align-items: center;
 }
 
-.menu-icons i:hover{
-    cursor: pointer;
-}
-
-.main-title h1{
+.hero h1{
     color: var(--text-dark-color);
     font-size: 12.8rem;
     font-weight: 700;
@@ -98,7 +140,7 @@ nav .bi{
     color: var(--text-dark-color);
 }
 
-/* Botão Flutuante */
+/* Floating Button */
 .bt-form-container{
     position: relative;
 }
@@ -110,8 +152,8 @@ nav .bi{
     position: fixed;
     z-index: 2;
     right:0;
-    margin-right: 50px;
-    bottom: 35%;
+    margin-right: 72px;
+    bottom: 72px;
 
     background-color: var(--text-dark-color);
     border-radius: 100%;
@@ -128,7 +170,7 @@ nav .bi{
     background-color: var(--bt-color-hover);
 }
 
-/* Rodapé */
+/* Footer*/
 footer{
     display: flex;
     justify-content: center;

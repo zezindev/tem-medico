@@ -46,25 +46,32 @@ function formatSpecialtyName(specialty) {
     return specialty
         .toLowerCase() // Garante que todas as letras comecem minúsculas
         .replace(/-/g, ' ') // Substitui hífens por espaços
-        .replace(/\b\p{L}/gu, char => char.toUpperCase()); // Capitaliza cada palavra, suportando caracteres acentuados
+        .replace(/\b\p{L}/gu, char => char.toUpperCase()); // Capitaliza cada palavra
 }
 
 // Abrir o modal com animação suave
 btForm.addEventListener('click', () => {
     modal.style.display = 'block';
-    modal.style.animation = "slide-in 0.5s ease-out forwards";
-    document.body.classList.add("modal-open"); // Impede o scroll quando o modal estiver aberto
-    document.body.style.overflow = 'hidden';  // Desativa o scroll quando o modal está visível
+    setTimeout(() => {
+        modal.classList.add('show'); // Ativa o fade-in do fundo
+        modal.querySelector('.modal-content').style.animation = 'slide-in-content 0.5s ease-out forwards'; // Animação do conteúdo
+    }, 10); // Pequeno atraso para garantir que o display 'block' tenha efeito antes da animação
+    document.body.classList.add('modal-open'); // Impede o scroll quando o modal estiver aberto
+    document.body.style.overflow = 'hidden'; // Desativa o scroll quando o modal está visível
 });
 
 // Fechar o modal com animação suave
 closeBtn.addEventListener('click', () => {
-    modal.style.animation = "slide-out 0.5s ease-in forwards";
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.animation = 'slide-out-content 0.5s ease-out forwards'; // Animação de saída do conteúdo
+
+    // Esconde o modal após a animação terminar
     setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.classList.remove("modal-open");
+        modal.classList.remove('show'); // Remove o fade-in do fundo
+        modal.style.display = 'none'; // Esconde o modal
+        document.body.classList.remove('modal-open');
         document.body.style.overflow = ''; // Restaura o scroll após o modal ser fechado
-    }, 500);
+    }, 200); // Tempo da animação (0.5s)
 });
 
 // Função para verificar se o usuário escolheu "Outros" no select de planos e exibir o campo adicional
@@ -144,48 +151,19 @@ form.addEventListener('submit', (e) => {
     const locationIcon = document.createElement('i');
     locationIcon.classList.add('bi', 'bi-geo-alt');
     const locationText = document.createElement('span');
-    locationText.textContent = formattedCity; // Usa o nome formatado da cidade
+    locationText.textContent = formattedCity; // Exibe a cidade formatada corretamente
+
     location.appendChild(locationIcon);
     location.appendChild(locationText);
 
-    const scCl = document.createElement('div');
-    scCl.classList.add('sc-cl');
-
-    const schedule = document.createElement('div');
-    schedule.classList.add('schedule');
-    const scheduleIcon = document.createElement('i');
-    scheduleIcon.classList.add('bi', 'bi-alarm');
-    const scheduleText = document.createElement('span');
-    scheduleText.textContent = `${startHours} - ${endHours}`;
-    schedule.appendChild(scheduleIcon);
-    schedule.appendChild(scheduleText);
-
-    const clinicInfo = document.createElement('div');
-    clinicInfo.classList.add('clinic');
-    const clinicText = document.createElement('span');
-    clinicText.textContent = clinic;
-    clinicInfo.appendChild(clinicText);
-
-    scCl.appendChild(schedule);
-    scCl.appendChild(clinicInfo);
-
     cardFooter.appendChild(location);
-    cardFooter.appendChild(scCl);
 
-    // Adicionar o header, body e footer ao card
     card.appendChild(cardHeader);
     card.appendChild(cardBody);
     card.appendChild(cardFooter);
 
-    // Adicionar o card à área de cards
-    cardsContainer.appendChild(card);
+    cardsContainer.appendChild(card); // Adiciona o novo card à página
 
     // Fechar o modal
-    modal.style.display = 'none';
-
-    // Restaurar o scroll
-    document.body.style.overflow = 'auto'; // Restaura o scroll da página
-
-    // Limpar o formulário
-    form.reset();
+    closeBtn.click(); // Simula um clique no botão de fechar
 });
