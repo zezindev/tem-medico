@@ -146,17 +146,50 @@ form.addEventListener('submit', (e) => {
     const cardFooter = document.createElement('div');
     cardFooter.classList.add('card-footer');
 
+    // Criando a localização (com ícone de pin)
     const location = document.createElement('div');
     location.classList.add('location');
-    const locationIcon = document.createElement('i');
-    locationIcon.classList.add('bi', 'bi-geo-alt');
+
+    const locationIcon = document.createElement('img');
+    locationIcon.src = 'Assets/Icons/local pin.svg';  // Caminho para o ícone
+    locationIcon.alt = 'Localização';  // Texto alternativo para o ícone
+
     const locationText = document.createElement('span');
-    locationText.textContent = formattedCity; // Exibe a cidade formatada corretamente
+    locationText.textContent = formattedCity;  // Cidade formatada
 
     location.appendChild(locationIcon);
-    location.appendChild(locationText);
+    location.appendChild(locationText);  // Adiciona o ícone e o texto à localização
 
+    // Criando a seção de horário e clínica
+    const scheduleDiv = document.createElement('div');
+    scheduleDiv.classList.add('schedule');
+
+    const clockIcon = document.createElement('img');
+    clockIcon.src = 'Assets/Icons/clock.svg';  // Caminho para o ícone de relógio
+    clockIcon.alt = 'Horário';  // Texto alternativo para o ícone de relógio
+
+    const scheduleText = document.createElement('span');
+    scheduleText.textContent = `${startHours} - ${endHours}`;  // Exibe o horário
+
+    scheduleDiv.appendChild(clockIcon);
+    scheduleDiv.appendChild(scheduleText);  // Adiciona o ícone e o horário
+
+    const clinicDiv = document.createElement('div');
+    clinicDiv.classList.add('clinic');
+
+    const clinicName = document.createElement('span');
+    clinicName.textContent = clinic;  // Nome da clínica
+
+    clinicDiv.appendChild(clinicName);  // Adiciona o nome da clínica
+
+    const scClDiv = document.createElement('div');
+    scClDiv.classList.add('sc-cl');
+    scClDiv.appendChild(scheduleDiv);
+    scClDiv.appendChild(clinicDiv);
+
+    // Adicionando todos os elementos ao cardFooter
     cardFooter.appendChild(location);
+    cardFooter.appendChild(scClDiv);
 
     card.appendChild(cardHeader);
     card.appendChild(cardBody);

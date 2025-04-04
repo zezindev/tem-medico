@@ -103,16 +103,35 @@
     margin-top: 16px;
 }
 
-.location i {
+.location img {
    margin-right: 16px;
+
+   height: 24px;
+   margin-bottom: -3px;
 }
 
-.schedule i {
+.location span{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -2%;
+}
+
+.schedule img {
     margin-right: 16px;
+
+    height: 24px;
+    margin-bottom: -3px;
 }
 
 .schedule span{
     text-transform: capitalize;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -2%;
+    margin-left: -2px;
 }
 
 .clinic span{
