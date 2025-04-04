@@ -31,7 +31,7 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--text-color-light);
+    color: var(--bt-color-clicked);
 }
 
 .time-schedule{
