@@ -1,6 +1,6 @@
 :root {
     --primary-color: #F5F6F8;
-    --bt-icon-color: #f5f6f83d;
+    --bt-icon-color: rgba(245, 246, 248, 0.239);
     --card-color: #ffffff;
     --card-border-color: #E7E8EA; 
     --border-color: #B8BAC1; 
@@ -31,16 +31,19 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--bt-color-clicked);
+    color: var(--border-color);
 }
 
-.time-schedule{
+.time-schedule {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    gap: 8px;
 }
 
-.time-schedule input{
-    max-width: 133px;
+.time-schedule input {
+    box-sizing: content-box;
+    width: 8ch; /* suficiente para "Ex: 08:00" */
+    padding: 4px 6px;
 }
 
 .time-schedule label{
@@ -55,7 +58,7 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--text-color-light);
+    color: var(--border-color);
 }
 
 form input,

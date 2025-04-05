@@ -8,7 +8,7 @@ html{
 
 :root {
     --primary-color: #F5F6F8;
-    --bt-icon-color: #f5f6f83d;
+    --bt-icon-color: rgba(245, 246, 248, 0.239);
     --card-color: #ffffff;
     --card-border-color: #E7E8EA; 
     --border-color: #B8BAC1; 
