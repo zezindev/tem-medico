@@ -24,14 +24,15 @@ form label {
     font-weight: 700;
 }
 
-.label-form{
+.label-form input::placeholder {
     font-family: Helvetica;
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--border-color);
+    color: var(--text-color-light);
+    opacity: 1;
 }
 
 .time-schedule {
@@ -42,8 +43,10 @@ form label {
 
 .time-schedule input {
     box-sizing: content-box;
-    width: 8ch; /* suficiente para "Ex: 08:00" */
-    padding: 4px 6px;
+    width: 8ch;
+    padding: 6px 6px; /* Aumente o padding para garantir espaço suficiente */
+    line-height: 1.4;  /* Ajuste do line-height para evitar corte no texto */
+    text-align: left;  /* Garantir que o texto fique alinhado corretamente */
 }
 
 .time-schedule label{
@@ -58,7 +61,7 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--border-color);
+    color: var(--text-color-light);
 }
 
 form input,
