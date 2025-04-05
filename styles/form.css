@@ -36,7 +36,7 @@ form label {
 }
 
 .label-form input::placeholder {
-    color: #B8BAC1;
+    color: #e4e4e4;
     opacity: 0.5;
 }
 
