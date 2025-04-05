@@ -36,8 +36,7 @@ form label {
 }
 
 .label-form input::placeholder {
-    color: #e4e4e4;
-    opacity: 0.5;
+    color: var(--text-color-light) !important;
 }
 
 .time-schedule {
