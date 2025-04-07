@@ -112,5 +112,5 @@ body.modal-open {
 }
 
 form input::placeholder {
-    color: var(--bt-color-clicked) !important;
+    color: var(--bt-icon-color) !important;
 }
