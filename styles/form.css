@@ -35,9 +35,7 @@ form label {
     opacity: 1;
 }
 
-.label-form input::placeholder {
-    color: var(--text-color-light) !important;
-}
+
 
 .time-schedule {
     display: flex;
@@ -111,4 +109,8 @@ form button:hover {
 /* Desativar scroll ao abrir o modal */
 body.modal-open {
     overflow: hidden;
+}
+
+form input::placeholder {
+    color: var(--bt-color-clicked) !important;
 }
