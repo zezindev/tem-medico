@@ -134,11 +134,12 @@ nav .bi{
     padding: 24px 0;
 }
 
-.counting-md h2{
+.counting-md p{
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-dark-color);
 }
+
 
 /* Floating Button */
 .bt-form-container{
@@ -170,6 +171,39 @@ nav .bi{
     background-color: var(--bt-color-hover);
 }
 
+/* Empty State */
+#empty-state{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+#empty-state img{
+    width: 106px;
+    margin-bottom: 40px;
+}
+
+#empty-state-texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#empty-state-texts p{
+    margin: 0;
+    padding: 0;
+
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -3%;
+    text-align: center;
+}
+
 /* Footer*/
 footer{
     display: flex;
@@ -185,4 +219,8 @@ footer{
 .ft-info span{
     color: var(--text-dark-color);
     font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
 }

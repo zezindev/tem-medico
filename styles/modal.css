@@ -78,26 +78,48 @@
     }
 }
 
+.form-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
 /* Botão de fechar */
 .close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 30px;
     background-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-dark-color);
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); 
-    color: var(--text-dark-color);
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    font-size: 24px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    font-size: 30px;
     transition: background-color 200ms ease-in-out;
 }
 
 .close-btn:hover{
     background-color: var(--bt-color-hover);
     color: var(--primary-color);
+    transition: background-color 200ms ease-in-out;
+}
+
+.clean-button{
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--text-dark-color);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Helvetica';
+    font-size: 16px;
+    font-weight: 600;
     transition: background-color 200ms ease-in-out;
 }

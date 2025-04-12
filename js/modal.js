@@ -1,80 +1,70 @@
+import { verificarEstadoVazio } from './empty-state.js';
+
 const btForm = document.querySelector('.bt-form');
 const modal = document.getElementById('formModal');
 const closeBtn = document.querySelector('.close-btn');
 const form = document.getElementById('form');
 const cardsContainer = document.querySelector('.card-container');
 
+document.querySelector('.clean-button').addEventListener('click', () => {
+    const form = document.getElementById('form');
+    form.reset();
+});
+
 // Função para formatar o horário para o formato HH:MM
 function formatHourInput(event) {
     let value = event.target.value;
 
-    // Remove tudo que não for número
     value = value.replace(/\D/g, '');
-
-    // Adiciona o separador ":" após os dois primeiros dígitos
     if (value.length > 2) {
         value = value.slice(0, 2) + ':' + value.slice(2, 4);
     }
-
-    // Limita o valor para 5 caracteres (HH:MM)
     if (value.length > 5) {
         value = value.slice(0, 5);
     }
-
-    // Atualiza o valor do campo
     event.target.value = value;
 }
 
-// Seleciona os campos de horário
 const startHoursField = document.getElementById('start-hours');
 const endHoursField = document.getElementById('end-hours');
-
-// Adiciona o evento de input nos campos de horário
 startHoursField.addEventListener('input', formatHourInput);
 endHoursField.addEventListener('input', formatHourInput);
 
-// Função para formatar o nome da cidade corretamente
 function formatCityName(city) {
     return city
-        .replace(/-/g, ' ') // Substitui hífens por espaços
-        .replace(/\b\w/g, char => char.toUpperCase()); // Capitaliza cada palavra
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, char => char.toUpperCase());
 }
 
-// Função para formatar a especialidade corretamente (capitalize cada palavra)
 function formatSpecialtyName(specialty) {
-    if (!specialty) return ''; // Se a especialidade for undefined ou null, retorna string vazia
+    if (!specialty) return '';
     return specialty
-        .toLowerCase() // Garante que todas as letras comecem minúsculas
-        .replace(/-/g, ' ') // Substitui hífens por espaços
-        .replace(/\b\p{L}/gu, char => char.toUpperCase()); // Capitaliza cada palavra
+        .toLowerCase()
+        .replace(/-/g, ' ')
+        .replace(/\b\p{L}/gu, char => char.toUpperCase());
 }
 
-// Abrir o modal com animação suave
 btForm.addEventListener('click', () => {
     modal.style.display = 'block';
     setTimeout(() => {
-        modal.classList.add('show'); // Ativa o fade-in do fundo
-        modal.querySelector('.modal-content').style.animation = 'slide-in-content 0.5s ease-out forwards'; // Animação do conteúdo
-    }, 10); // Pequeno atraso para garantir que o display 'block' tenha efeito antes da animação
-    document.body.classList.add('modal-open'); // Impede o scroll quando o modal estiver aberto
-    document.body.style.overflow = 'hidden'; // Desativa o scroll quando o modal está visível
+        modal.classList.add('show');
+        modal.querySelector('.modal-content').style.animation = 'slide-in-content 0.5s ease-out forwards';
+    }, 10);
+    document.body.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
 });
 
-// Fechar o modal com animação suave
 closeBtn.addEventListener('click', () => {
     const modalContent = modal.querySelector('.modal-content');
-    modalContent.style.animation = 'slide-out-content 0.5s ease-out forwards'; // Animação de saída do conteúdo
-
-    // Esconde o modal após a animação terminar 
+    modalContent.style.animation = 'slide-out-content 0.5s ease-out forwards';
     setTimeout(() => {
-        modal.classList.remove('show'); // Remove o fade-in do fundo
-        modal.style.display = 'none'; // Esconde o modal
+        modal.classList.remove('show');
+        modal.style.display = 'none';
         document.body.classList.remove('modal-open');
-        document.body.style.overflow = ''; // Restaura o scroll após o modal ser fechado
-    }, 200); // Tempo da animação (0.5s)
+        document.body.style.overflow = '';
+    }, 200);
 });
 
-// Função para verificar se o usuário escolheu "Outros" no select de planos e exibir o campo adicional
 function checkOtherPlan(select) {
     const otherPlanInput = document.getElementById("otherPlan");
     if (select.value === "outros") {
@@ -84,41 +74,38 @@ function checkOtherPlan(select) {
     }
 }
 
-// Submeter o formulário e criar o card
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Evitar o envio tradicional do formulário
+    e.preventDefault();
 
-    // Pegar as informações do formulário
     const specialty = document.getElementById('specialty').value;
     const name = document.getElementById('name').value;
     const plans = document.getElementById('plans').value;
     const city = document.getElementById('city').value;
-    const formattedCity = formatCityName(city); // Formata a cidade corretamente
-    const formattedSpecialty = formatSpecialtyName(specialty); // Aplica a formatação correta à especialidade
+    const formattedCity = formatCityName(city);
+    const formattedSpecialty = formatSpecialtyName(specialty);
     const startHours = document.getElementById('start-hours').value;
     const endHours = document.getElementById('end-hours').value;
     const clinic = document.getElementById('clinic').value;
 
-    // Pegar a foto do médico (se houver)
     const photoInput = document.getElementById('photo');
     const photoFile = photoInput.files[0];
-    const photoUrl = photoFile ? URL.createObjectURL(photoFile) : './Assets/Avatar.png'; // Caso não tenha foto, usa a foto padrão
+    const photoUrl = photoFile ? URL.createObjectURL(photoFile) : './Assets/Avatar.png';
 
-    // Criar o card
     const card = document.createElement('div');
     card.classList.add('card');
+    card.setAttribute('data-id', Math.random().toString(36).substr(2, 9));
 
     const cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header');
 
     const cardTitle = document.createElement('h2');
-    cardTitle.textContent = formattedSpecialty; // ✅ Exibe a especialidade formatada corretamente
+    cardTitle.textContent = formattedSpecialty;
 
     const doctorInfo = document.createElement('div');
     doctorInfo.classList.add('doctor-info');
 
     const doctorPhoto = document.createElement('img');
-    doctorPhoto.src = photoUrl; // Usa a foto do arquivo ou a padrão
+    doctorPhoto.src = photoUrl;
     doctorPhoto.alt = 'Foto do médico';
     doctorPhoto.classList.add('doctor-photo');
 
@@ -137,7 +124,7 @@ form.addEventListener('submit', (e) => {
     const insuranceLogos = document.createElement('div');
     insuranceLogos.classList.add('insurance-logos');
     const planImage = document.createElement('img');
-    planImage.src = `./Assets/${plans}.png`; // Certifique-se de que as imagens dos planos de saúde estão no diretório correto
+    planImage.src = `./Assets/${plans}.png`;
     planImage.alt = plans;
     insuranceLogos.appendChild(planImage);
 
@@ -146,48 +133,45 @@ form.addEventListener('submit', (e) => {
     const cardFooter = document.createElement('div');
     cardFooter.classList.add('card-footer');
 
-    // Criando a localização (com ícone de pin)
     const location = document.createElement('div');
     location.classList.add('location');
 
     const locationIcon = document.createElement('img');
-    locationIcon.src = 'Assets/Icons/local pin.svg';  // Caminho para o ícone
-    locationIcon.alt = 'Localização';  // Texto alternativo para o ícone
+    locationIcon.src = 'Assets/Icons/local pin.svg';
+    locationIcon.alt = 'Localização';
 
     const locationText = document.createElement('span');
-    locationText.textContent = formattedCity;  // Cidade formatada
+    locationText.textContent = formattedCity;
 
     location.appendChild(locationIcon);
-    location.appendChild(locationText);  // Adiciona o ícone e o texto à localização
+    location.appendChild(locationText);
 
-    // Criando a seção de horário e clínica
     const scheduleDiv = document.createElement('div');
     scheduleDiv.classList.add('schedule');
 
     const clockIcon = document.createElement('img');
-    clockIcon.src = 'Assets/Icons/clock.svg';  // Caminho para o ícone de relógio
-    clockIcon.alt = 'Horário';  // Texto alternativo para o ícone de relógio
+    clockIcon.src = 'Assets/Icons/clock.svg';
+    clockIcon.alt = 'Horário';
 
     const scheduleText = document.createElement('span');
-    scheduleText.textContent = `${startHours} - ${endHours}`;  // Exibe o horário
+    scheduleText.textContent = `${startHours} - ${endHours}`;
 
     scheduleDiv.appendChild(clockIcon);
-    scheduleDiv.appendChild(scheduleText);  // Adiciona o ícone e o horário
+    scheduleDiv.appendChild(scheduleText);
 
     const clinicDiv = document.createElement('div');
     clinicDiv.classList.add('clinic');
 
     const clinicName = document.createElement('span');
-    clinicName.textContent = clinic;  // Nome da clínica
+    clinicName.textContent = clinic;
 
-    clinicDiv.appendChild(clinicName);  // Adiciona o nome da clínica
+    clinicDiv.appendChild(clinicName);
 
     const scClDiv = document.createElement('div');
     scClDiv.classList.add('sc-cl');
     scClDiv.appendChild(scheduleDiv);
     scClDiv.appendChild(clinicDiv);
 
-    // Adicionando todos os elementos ao cardFooter
     cardFooter.appendChild(location);
     cardFooter.appendChild(scClDiv);
 
@@ -195,8 +179,15 @@ form.addEventListener('submit', (e) => {
     card.appendChild(cardBody);
     card.appendChild(cardFooter);
 
-    cardsContainer.appendChild(card); // Adiciona o novo card à página
+    cardsContainer.appendChild(card);
+    form.reset(); // limpa o formulário se quiser
+    verificarEstadoVazio(); // atualiza contador e exibe/esconde empty state
 
-    // Fechar o modal
-    closeBtn.click(); // Simula um clique no botão de fechar
+
+    // Fecha o modal e limpa o formulário
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    form.reset();      
 });

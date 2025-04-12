@@ -31,11 +31,25 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--text-color-light);
-    opacity: 1;
+    color: var(--text-dark-color); /* cor do texto digitado */
+    caret-color: var(--text-dark-color); /* cor da barrinha que pisca */
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    outline: none;
 }
 
+.label-form:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+}
 
+.label-form::placeholder {
+    color: var(--text-color-light);
+    opacity: 1; /* garante visibilidade em todos navegadores */
+}
 
 .time-schedule {
     display: flex;
@@ -46,9 +60,9 @@ form label {
 .time-schedule input {
     box-sizing: content-box;
     width: 8ch;
-    padding: 6px 6px; /* Aumente o padding para garantir espaço suficiente */
-    line-height: 1.4;  /* Ajuste do line-height para evitar corte no texto */
-    text-align: left;  /* Garantir que o texto fique alinhado corretamente */
+    padding: 6px 6px; 
+    line-height: 1.4;  
+    text-align: left; 
 }
 
 .time-schedule label{
@@ -63,11 +77,71 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
+    color: var(--text-dark-color); /* cor do texto digitado */
+    caret-color: var(--text-dark-color); /* cor da barrinha que pisca */
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    outline: none;
+}
+
+input[type="date"].label-form:invalid {
     color: var(--text-color-light);
 }
 
-form input,
-form select {
+/* se tiver valor */
+input[type="date"].label-form:valid {
+    color: var(--text-dark-color);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Input de texto */
+  .input-wrapper input[type="text"] {
+    flex: 1;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -3%;
+    color: var(--text-dark-color);
+    background: transparent;
+    border: none;
+    outline: none;
+    caret-color: var(--text-dark-color);
+
+    margin-bottom: 0;
+  }
+  
+  /* Placeholder */
+  .input-wrapper input[type="text"]::placeholder {
+    color: var(--text-color-light);
+  }
+
+  .clip-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .clip-icon img{
+    width: 20px;
+  }
+
+  /* Oculta o input file real */
+  .clip-icon input[type="file"] {
+    display: none;
+  }
+  
+
+form input{
     padding: 10px;
     margin-bottom: 10px;
     border-bottom: solid 1px var(--border-color);
@@ -80,12 +154,10 @@ form button {
     cursor: pointer;
     width: 139px;
     height: 72px;
-    top: 936px;
-    left: 72px;
     border-radius: 999px;
     border: none;
     background-color: var(--bt-color-disabled);
-    margin-top: 122px;
+    margin-top: 16px;
     padding-top: 24px;
     padding-right: 40px;
     padding-bottom: 24px;
@@ -99,7 +171,6 @@ form button {
     letter-spacing: -3%;
     color: var(--card-color);
     transition: background-color 200ms ease-in-out;
-
 }
 
 form button:hover {

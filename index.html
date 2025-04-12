@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,25 +34,27 @@
         <h1>TEM <br> MÉDICO?</h1>
     </section>
 
-    <section class="counting-md">
-            <h2>13 médicos disponíveis</h2>
-    </section>
-
     <!-- Modal -->
     <div id="formModal" class="modal">
         <div class="modal-content">
             <div class="form-header">
                 <span class="close-btn">&times;</span>
-                <button class="clean-button"><a href="#">Limpar</a></button>
+                <button class="clean-button">Limpar</button>
             </div>
             
             <form id="form">
-                <input type="text" id="name" name="name" placeholder="Médico(a)" required class="label-form">  
-                <input type="file" id="photo" name="photo" accept="image/*">
+                <div class="input-wrapper">
+                    <input type="text" id="name" name="name" placeholder="Médico(a)" required class="label-form" />
+                    <label for="photo" class="clip-icon">
+                        <img src="./assets/icons/paper-clip.svg" alt="Ícone de clipe" />
+                        <input type="file" id="photo" name="photo" accept="image/*" />
+                    </label>
+                </div>
                 <input type="text" id="specialty" name="specialty" placeholder="Especialidade" required class="label-form"> 
                 <input type="text" id="plans" name="plans" placeholder="Plano de saúde" required class="label-form"> 
                 <input type="text" id="city" name="city" placeholder="Cidade" required class="label-form"> 
                 <input type="text" id="clinic" name="clinic" placeholder="Clínica" required class="label-form"> 
+                <input type="date" id="date" name="date" placeholder="Data" required class="label-form"> 
 
                 <div class="time-schedule">
                     <label for="start-hours">De</label>
@@ -69,20 +71,41 @@
         
 
     <section class="bt-form-container">
-        <div class="bt-form">
+        <div class="bt-form" id="open-modal-btn">
             <img src="assets/Vector.svg" alt="">
         </div>
     </section>
 
-    <section class="card-container">
+    
+    <!-- Counting Médicos -->
+    <section class="counting-md hidden">
+        <p>Médicos disponíveis: <span id="medico-count">0</span></p>
     </section>
+
+    <!-- Empty State -->
+    <section id="empty-state">
+        <img src="assets/icons/empty-state.svg" alt="Empty State Icon">
+        <div id="empty-state-texts">
+            <p>Lamentamos!</p>
+            <p>Não temos médicos disponíveis</p>
+        </div>
+    </section>
+
+
+    <!-- Container dos Cards -->
+    <section id="card-container" class="card-container"></section>
 
     <footer>
         <div class="ft-info">
             <span>Tem Médico? © 2025 | Todos direitos reservados</span>
         </div>
     </footer>
-    <script src="./js/modal.js"></script>
+
     <script src="./js/data-button.js"></script>
+    <script type="module" src="./js/modal.js"></script>
+    <script type="module" src="./js/empty-state.js"></script>
+
+
+
 </body>
 </html>
