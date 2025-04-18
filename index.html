@@ -14,17 +14,64 @@
 <body>
     <header>
         <nav class="menu">
-            <div class="about-div">
+            <div>
                 <button class="about"><a href="#">Sobre</a></button>
             </div>
             
             <div class="menu-icons">
-                <div class="icons-bt">
+                <div class="search-icon">
                     <img src="assets/icons/magnifying glass.svg" alt="Magnifying glass">
                 </div>
                 <div class="menu-date">
                     <img src="assets/icons/calendar.svg" alt="Calendar">        
                     <span class="date-text">18 de fevereiro</span>
+                    <ul id="dropdownMenu" class="dropdown-menu hidden">
+                        <li data-dia="hoje" class="active">
+                          <label class="checkbox-wrapper">
+                            <input type="checkbox" checked disabled>
+                            <span class="checkmark">
+                                <img src="./assets/icons/checkmark.svg" alt="check" class="check-icon" />
+                            </span>
+                            <span>Hoje</span>
+                          </label>
+                        </li>
+                        <li data-dia="amanha">
+                          <label class="checkbox-wrapper">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark">
+                                <img src="./assets/icons/checkmark.svg" alt="check" class="check-icon" />
+                            </span>
+                            <span>Amanhã</span>
+                          </label>
+                        </li>
+                        <li data-dia="3dias">
+                          <label class="checkbox-wrapper">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark">
+                                <img src="./assets/icons/checkmark.svg" alt="check" class="check-icon" />
+                            </span>
+                            <span>Nos próximos 3 dias</span>
+                          </label>
+                        </li>
+                        <li data-dia="semana">
+                          <label class="checkbox-wrapper">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark">
+                                <img src="./assets/icons/checkmark.svg" alt="check" class="check-icon" />
+                            </span>
+                            <span>Na próxima semana</span>
+                          </label>
+                        </li>
+                        <li data-dia="15dias">
+                          <label class="checkbox-wrapper">
+                            <input type="checkbox" disabled>
+                            <span class="checkmark">
+                                <img src="./assets/icons/checkmark.svg" alt="check" class="check-icon" />
+                            </span>
+                            <span>Nos próximos 15 dias</span>
+                          </label>
+                        </li>
+                    </ul>                   
                 </div>
             </div>
         </nav>
@@ -102,6 +149,7 @@
     </footer>
 
     <script src="./js/data-button.js"></script>
+    <script src="./js/dropdown.js"></script>
     <script type="module" src="./js/modal.js"></script>
     <script type="module" src="./js/empty-state.js"></script>
 
