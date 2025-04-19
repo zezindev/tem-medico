@@ -1,0 +1,121 @@
+:root {
+  --primary-color: #F5F6F8;
+  --bt-icon-color: rgba(245, 246, 248, 0.239);
+  --card-color: #ffffff;
+  --card-border-color: #E7E8EA;
+  --border-color: #B8BAC1;
+  --text-color-light: #B8BAC1;
+  --text-dark-color: #181818;
+  --bt-color-disabled: #95A3F5;
+  --bt-color-hover: #2B48EC;
+  --bt-color-clicked: #142DB8;
+}
+
+.search-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000; /* Aumentado para sobrepor qualquer outro conteúdo */
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+}
+
+.search-modal.show {
+  display: block;
+  opacity: 1;
+}
+
+.search-modal-content {
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 64px 48px; /* Ajuste para melhor responsividade */
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  animation: slide-in-search 0.2s ease-out forwards;
+}
+
+@keyframes slide-in-search {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-out-search {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-modal-content {
+    padding: 48px 24px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .search-input-field {
+    font-size: 20px;
+  }
+}
+
+.search-modal-header {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+
+.search-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-dark-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  transition: background-color 200ms ease-in-out;
+}
+
+.search-close-btn:hover {
+  background-color: var(--bt-color-hover);
+  color: var(--primary-color);
+}
+
+.search-input-field {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Helvetica', sans-serif;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--card-border-color);
+  color: var(--text-dark-color);
+  padding: 12px 0;
+}
+
+.search-input-field::placeholder {
+  color: var(--text-color-light);
+  opacity: 1;
+}

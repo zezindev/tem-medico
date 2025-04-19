@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/cards.css">
     <link rel="stylesheet" href="./styles/modal.css">
+    <link rel="stylesheet" href="./styles/search.css">
     <link rel="stylesheet" href="./styles/form.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
@@ -19,9 +20,22 @@
             </div>
             
             <div class="menu-icons">
-                <div class="search-icon">
-                    <img src="assets/icons/magnifying glass.svg" alt="Magnifying glass">
+                <div class="search-trigger" id="openSearchModalBtn">
+                    <img src="assets/icons/magnifying glass.svg" alt="Pesquisar">
                 </div>
+                  
+                  <!-- Modal de busca -->
+                <div class="search-modal" id="searchModal">
+                    <div class="search-modal-content">
+                      <div class="search-modal-header">
+                        <button class="search-close-btn" id="closeSearchModalBtn">&times;</button>
+                      </div>
+                      <form>
+                        <input type="text" placeholder="Cidade, Especialidade ou Médico (a)" class="search-input-field">
+                      </form>
+                    </div>
+                </div>
+
                 <div class="menu-date">
                     <img src="assets/icons/calendar.svg" alt="Calendar">        
                     <span class="date-text">18 de fevereiro</span>
@@ -150,10 +164,8 @@
 
     <script src="./js/data-button.js"></script>
     <script src="./js/dropdown.js"></script>
+    <script type="module" src="./js/search.js"></script>
     <script type="module" src="./js/modal.js"></script>
     <script type="module" src="./js/empty-state.js"></script>
-
-
-
 </body>
 </html>
