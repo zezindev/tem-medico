@@ -243,9 +243,12 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 }
 
 .hero {
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
+
+    margin: 0;
+    padding: 0;
 }
 
 .hero h1{
@@ -260,11 +263,27 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 410px) {
+    .hero{
+        height: 60vh;
+    }
+
     .hero h1{
-        margin-top: 68px;
+        font-size: 5.6rem;
+        padding-top: 60px ;
     }
 }
+
+@media (max-width: 330px) {
+    .hero{
+        height: 80vh;
+    }
+
+    .hero h1{
+        padding-top: 100px ;
+    }
+}
+
 .counting-md{
     padding: 24px 0;
 }
@@ -305,7 +324,7 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     background-color: var(--bt-color-hover);
 }
 
-@media (max-width: 510px) {
+@media (max-width: 410px) {
     .bt-form {
         margin-right: 20px;
         bottom: 58px;
@@ -321,9 +340,10 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     flex-direction: column;
 }
 
+
+
 #empty-state img{
     width: 106px;
-    margin-bottom: 40px;
 }
 
 #empty-state-texts{
@@ -345,6 +365,24 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    #empty-state {
+        height: 30vh;
+        margin-bottom: 40px;
+    }
+    
+}
+
+@media (max-width: 410px) {
+    #empty-state {
+        height: 30vh;
+        margin-bottom: 40px;
+    }
+
+    #empty-state img{
+        width: 90px;
+    }
+}
 /* Footer*/
 footer{
     display: flex;
@@ -355,6 +393,21 @@ footer{
     margin-top: 40px;
 
     border-top: 1px solid var(--border-color);
+}
+
+.ft-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 310px) {
+.ft-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
 }
 
 .ft-info span{
