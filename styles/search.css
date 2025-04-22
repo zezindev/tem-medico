@@ -14,14 +14,14 @@
 .search-modal {
   display: none;
   position: fixed;
-  z-index: 2000; /* Aumentado para sobrepor qualquer outro conteúdo */
+  z-index: 1000;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.2s ease-out;
-  opacity: 0;
+  transition: opacity 0.2s ease-out; 
+  opacity: 0; 
 }
 
 .search-modal.show {
@@ -32,7 +32,7 @@
 .search-modal-content {
   background-color: var(--primary-color);
   margin: 0;
-  padding: 64px 48px; /* Ajuste para melhor responsividade */
+  padding: 72px;
   width: 100%;
   max-width: 600px;
   text-align: center;
@@ -40,7 +40,7 @@
   top: 0;
   right: 0;
   height: 100%;
-  animation: slide-in-search 0.2s ease-out forwards;
+  animation: slide-in-content 0.2s ease-out forwards;
 }
 
 @keyframes slide-in-search {
@@ -76,7 +76,8 @@
 
 .search-modal-header {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 20px 0;
 }
 
@@ -84,22 +85,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--text-dark-color);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 30px;
   transition: background-color 200ms ease-in-out;
 }
 
 .search-close-btn:hover {
   background-color: var(--bt-color-hover);
   color: var(--primary-color);
+  transition: background-color 200ms ease-in-out;
 }
 
 .search-input-field {
@@ -118,4 +120,20 @@
 .search-input-field::placeholder {
   color: var(--text-color-light);
   opacity: 1;
+}
+
+.search-input-field{
+  font-family: Helvetica;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -3%;
+
+  color: var(--text-dark-color); /* cor do texto digitado */
+  caret-color: var(--text-dark-color); /* cor da barrinha que pisca */
+  background-color: transparent;
+
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  outline: none;
 }
