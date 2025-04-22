@@ -324,7 +324,7 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     background-color: var(--bt-color-hover);
 }
 
-@media (max-width: 410px) {
+@media (max-width: 768px) {
     .bt-form {
         margin-right: 20px;
         bottom: 58px;
