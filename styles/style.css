@@ -258,29 +258,34 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 }
 
 @media (max-width: 768px) {
+    .hero{
+        height: 50vh;
+    }
+
     .hero h1{
         font-size: 7.2rem;
+        padding-top: 150px;
     }
 }
 
 @media (max-width: 410px) {
     .hero{
-        height: 60vh;
+        height: 80vh;
     }
 
     .hero h1{
         font-size: 5.6rem;
-        padding-top: 60px ;
+        padding-top: 60px;
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 375px) {
     .hero{
         height: 80vh;
     }
 
     .hero h1{
-        padding-top: 100px ;
+        padding-top: 150px;
     }
 }
 
@@ -340,8 +345,6 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     flex-direction: column;
 }
 
-
-
 #empty-state img{
     width: 106px;
 }
@@ -367,7 +370,7 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 
 @media (max-width: 768px) {
     #empty-state {
-        height: 20vh;
+        height: 30vh;
         margin-bottom: 40px;
     }
     
@@ -401,7 +404,7 @@ footer{
     align-items: center;
 }
 
-@media (max-width: 310px) {
+@media (max-width: 410px) {
 .ft-info{
     display: flex;
     flex-direction: column;
