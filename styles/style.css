@@ -367,7 +367,7 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 
 @media (max-width: 768px) {
     #empty-state {
-        height: 30vh;
+        height: 20vh;
         margin-bottom: 40px;
     }
     
