@@ -137,7 +137,7 @@ form.addEventListener('submit', (e) => {
     location.classList.add('location');
 
     const locationIcon = document.createElement('img');
-    locationIcon.src = 'Assets/Icons/local pin.svg';
+    locationIcon.src = 'assets/icons/local pin.svg';
     locationIcon.alt = 'Localização';
 
     const locationText = document.createElement('span');
