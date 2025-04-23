@@ -124,7 +124,7 @@ form.addEventListener('submit', (e) => {
     const insuranceLogos = document.createElement('div');
     insuranceLogos.classList.add('insurance-logos');
     const planImage = document.createElement('img');
-    planImage.src = `./Assets/${plans}.png`;
+    planImage.src = `./assets/${plans}.png`;
     planImage.alt = plans;
     insuranceLogos.appendChild(planImage);
 
@@ -150,7 +150,7 @@ form.addEventListener('submit', (e) => {
     scheduleDiv.classList.add('schedule');
 
     const clockIcon = document.createElement('img');
-    clockIcon.src = 'Assets/Icons/clock.svg';
+    clockIcon.src = 'assets/icons/clock.svg';
     clockIcon.alt = 'Horário';
 
     const scheduleText = document.createElement('span');
