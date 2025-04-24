@@ -108,7 +108,7 @@
 
    height: 24px;
    margin-bottom: -3px;
-   padding: 10px;/*modificação*/
+   min-width: 30px;
 }
 
 .location span{
@@ -124,7 +124,7 @@
 
     height: 24px;
     margin-bottom: -3px;
-    padding: 10px; /*modificação*/
+    min-width: 30px;
 }
 
 .schedule span{
