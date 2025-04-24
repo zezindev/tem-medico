@@ -136,10 +136,6 @@ nav .about a{
     transition: background-color 200ms ease-in-out;
 }
 
-.menu-date:hover{
-    background-color: #142DB8;
-}
-
 .date-text {
     flex: 1;
     text-align: left;
