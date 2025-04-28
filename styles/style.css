@@ -23,7 +23,7 @@ body{
     background-color: var(--primary-color);
     font-family: 'Helvetica';
 
-    padding: 0 72px 0 72px;
+    padding: 0 72px 72px 72px;
 }
 
 @media (max-width: 768px) {
