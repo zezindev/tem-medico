@@ -89,7 +89,7 @@ form.addEventListener('submit', (e) => {
 
     const photoInput = document.getElementById('photo');
     const photoFile = photoInput.files[0];
-    const photoUrl = photoFile ? URL.createObjectURL(photoFile) : './Assets/Avatar.png';
+    const photoUrl = photoFile ? URL.createObjectURL(photoFile) : './assets/Avatar.png';
 
     const card = document.createElement('div');
     card.classList.add('card');

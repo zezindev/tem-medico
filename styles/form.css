@@ -31,8 +31,8 @@ form label {
     line-height: 40px;
     letter-spacing: -3%;
 
-    color: var(--text-dark-color); /* cor do texto digitado */
-    caret-color: var(--text-dark-color); /* cor da barrinha que pisca */
+    color: var(--text-dark-color);
+    caret-color: var(--text-dark-color);
     background-color: transparent;
 
     border: none;
@@ -48,7 +48,7 @@ form label {
 
 .label-form::placeholder {
     color: var(--text-color-light);
-    opacity: 1; /* garante visibilidade em todos navegadores */
+    opacity: 1; 
 }
 
 .time-schedule {
@@ -100,10 +100,11 @@ input[type="date"].label-form:valid {
     display: flex;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-  }
+    margin-bottom: 20px;
+}
   
   /* Input de texto */
-  .input-wrapper input[type="text"] {
+.input-wrapper input[type="text"] {
     flex: 1;
     font-family: Helvetica;
     font-weight: 700;
@@ -117,33 +118,31 @@ input[type="date"].label-form:valid {
     caret-color: var(--text-dark-color);
 
     margin-bottom: 0;
-  }
+}
   
-  /* Placeholder */
-  .input-wrapper input[type="text"]::placeholder {
+.input-wrapper input[type="text"]::placeholder {
     color: var(--text-color-light);
-  }
+}
 
-  .clip-icon {
+.clip-icon {
     cursor: pointer;
     margin-left: 10px;
     display: flex;
     align-items: center;
-  }
+}
 
-  .clip-icon img{
+.clip-icon img{
     width: 20px;
-  }
+}
 
-  /* Oculta o input file real */
-  .clip-icon input[type="file"] {
+.clip-icon input[type="file"] {
     display: none;
-  }
+}
   
 
 form input{
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-bottom: solid 1px var(--border-color);
     border-top: none;
     border-left: none;

@@ -45,6 +45,9 @@
     right: 0;
     height: 100%;
     
+    overflow-y: auto; /* ⬅️ permite o scroll vertical */
+    -webkit-overflow-scrolling: touch; /* ⬅️ deixa o scroll suave em iPhone/iOS */
+
     /* A animação de entrada continua */
     animation: slide-in-content 0.2s ease-out forwards;
 }
@@ -72,9 +75,33 @@
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .modal-content {
-        width: 100vw;
+        padding: 24px 16px; /* Padding reduzido para caber melhor */
+        max-width: 100vw;
         height: 100vh;
-        border-radius: 0;
+    }
+
+    .label-form,
+    .label-form-schedule,
+    .input-wrapper input[type="text"],
+    form label {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .form-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .time-schedule {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .time-schedule label {
+        padding: 0;
     }
 }
 
