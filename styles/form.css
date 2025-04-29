@@ -24,10 +24,17 @@ form label {
     font-weight: 700;
 }
 
+.form-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
 .label-form {
     font-family: Helvetica;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 3.2rem;
     line-height: 40px;
     letter-spacing: -3%;
 

@@ -118,12 +118,11 @@
     transition: background-color 200ms ease-in-out;
 }
 
-
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .modal-content {
-        padding: 24px 16px; /* Padding reduzido para caber melhor */
-        max-width: 94vw;
+        padding: 24px 15px; /* Padding reduzido para caber melhor */
+        max-width: 92vw;
         height: 100%;
         overflow-x: scroll;
     }
