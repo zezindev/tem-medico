@@ -72,8 +72,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 30px !important;
+  height: 30px !important;
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--text-dark-color);
   backdrop-filter: blur(10px); 
@@ -117,6 +117,7 @@
 @media (max-width: 768px) {
   .search-input-field{
     font-size: 1.8rem;
+    max-width: 100%;
   }
 
   .search-modal-content {
