@@ -78,7 +78,7 @@
   color: var(--text-dark-color);
   backdrop-filter: blur(10px); 
   -webkit-backdrop-filter: blur(10px); 
-  border-radius: 50%;
+  border-radius: 100px;
   border: none;
   cursor: pointer;
   font-size: 30px;
@@ -92,7 +92,6 @@
 }
 
 .search-input-field{
-  width: 100%;
   font-family: Helvetica;
   font-weight: 700;
   font-size: 3.2rem;
@@ -105,6 +104,7 @@
 
   border: none;
   border-bottom: 1px solid var(--border-color);
+  border-radius: none;
   outline: none;
 }
 
@@ -116,7 +116,7 @@
 
 @media (max-width: 768px) {
   .search-input-field{
-    font-size: 1.8rem;
+    font-size: 2rem;
     max-width: 100%;
   }
 
