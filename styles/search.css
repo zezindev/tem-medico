@@ -81,7 +81,7 @@
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  font-size: 3.0rem;
+  font-size: 30px;
   transition: background-color 200ms ease-in-out;
 }
 
@@ -121,7 +121,7 @@
 
   .search-modal-content {
     padding: 24px 15px; /* Padding reduzido para caber melhor */
-    max-width: 99vw;
+    max-width: 100vw;
     height: 100%;
     overflow-x: scroll;
   }
