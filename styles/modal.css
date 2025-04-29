@@ -118,6 +118,12 @@
     transition: background-color 200ms ease-in-out;
 }
 
+.clean-button:hover{
+    background-color: var(--bt-color-hover);
+    color: var(--primary-color);
+    transition: background-color 200ms ease-in-out;
+}
+
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .modal-content {
