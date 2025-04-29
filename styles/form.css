@@ -184,3 +184,34 @@ body.modal-open {
 form input::placeholder {
     color: var(--text-color-light) !important;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    form label {
+        margin: 10px 0 5px;
+        font-size: 1.6rem;
+    }
+
+    .input-wrapper input[type="text"] {
+        font-size: 2.4rem;
+    }
+
+    .label-form {
+        font-size: 2.4rem;
+        line-height: 30px;
+        letter-spacing: -3%;
+    }
+    .time-schedule {
+        gap: 5px;
+    }
+
+    .time-schedule input {
+        box-sizing: content-box;
+        width: 8ch;
+        padding: 0 0 6px; 
+    }
+
+    .label-form-schedule{
+        font-size: 2.4rem;
+    }
+}
