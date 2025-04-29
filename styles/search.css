@@ -79,7 +79,7 @@
   color: var(--text-dark-color);
   backdrop-filter: blur(10px); 
   -webkit-backdrop-filter: blur(10px); 
-  border-radius: 100px;
+  border-radius: 100%;
   border: none;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
