@@ -121,7 +121,7 @@
 
   .search-modal-content {
     padding: 24px 15px; /* Padding reduzido para caber melhor */
-    max-width: 99vw;
+    max-width: 95vw;
     height: 100%;
     overflow-x: scroll;
   }
