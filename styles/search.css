@@ -72,20 +72,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px !important;
-  height: 30px !important;
+  width: 30px;
+  height: 30px;
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--text-dark-color);
   backdrop-filter: blur(10px); 
   -webkit-backdrop-filter: blur(10px); 
-  border-radius: 100px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   font-size: 30px;
   transition: background-color 200ms ease-in-out;
 }
 
-.search-close-btn:hover {
+.search-close-btn:hover{
   background-color: var(--bt-color-hover);
   color: var(--primary-color);
   transition: background-color 200ms ease-in-out;
