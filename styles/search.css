@@ -72,16 +72,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 30px;
   width: 30px;
   height: 30px;
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--text-dark-color);
   backdrop-filter: blur(10px); 
   -webkit-backdrop-filter: blur(10px); 
-  border-radius: 50%;
+  border-radius: 100px;
   border: none;
   cursor: pointer;
-  font-size: 30px;
   transition: background-color 200ms ease-in-out;
 }
 
