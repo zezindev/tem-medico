@@ -110,14 +110,13 @@
   .about-modal-content {
     padding: 24px 15px;
     max-width: 100vw;
-    height: 100vh;
   }
 
   .about-text-content h1 {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   .about-text-content p {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
