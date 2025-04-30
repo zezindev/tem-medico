@@ -72,7 +72,7 @@ nav.menu {
     }
 }
 
-nav .about {
+.about {
     border: 1px solid rgba(255, 255, 255, 0.3); 
     background-color: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(10px); 
@@ -80,13 +80,23 @@ nav .about {
 
     padding: 24px;
     border-radius: 100px;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
 }
 
-nav .about a{
+.about a{
     text-decoration: none;
     color: var(--text-dark-color);
     font-weight: 600;
     font-size: 2rem;
+}
+
+.about:hover {
+    background-color: var(--bt-color-hover);
+}
+
+.about:hover a {
+    color: var(--primary-color);
 }
 
 .menu-icons {
@@ -385,37 +395,6 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     #empty-state img{
         width: 90px;
     }
-}
-/* Footer*/
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 40px 0;
-    margin-top: 40px;
-
-    border-top: 1px solid var(--border-color);
-}
-
-.ft-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media (max-width: 410px) {
-.ft-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-}
-
-.ft-info span{
-    color: var(--text-dark-color);
-    font-size: 14px;
 }
 
 .hidden {

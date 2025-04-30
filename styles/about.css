@@ -1,0 +1,122 @@
+:root {
+    --primary-color: #F5F6F8;
+    --bt-icon-color: rgba(245, 246, 248, 0.239);
+    --card-color: #ffffff;
+    --card-border-color: #E7E8EA; 
+    --border-color: #B8BAC1; 
+    --text-color-light: #B8BAC1; 
+    --text-dark-color: #181818;
+    --bt-color-disabled: #95A3F5;
+    --bt-color-hover: #2B48EC;
+    --bt-color-clicked: #142DB8;
+}
+
+.about-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.about-modal.show {
+  display: block;
+  opacity: 1;
+}
+
+.about-modal-content {
+    background-color: var(--primary-color);
+    padding: 72px;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh; /* Garante altura total da tela */
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: left;
+    overflow-y: auto; /* Permite scroll dentro do modal */
+    animation: slide-in-about 0.2s ease-out forwards;
+}
+
+.about-modal-header {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+
+.about-close-btn {
+  font-size: 27px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-dark-color);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-close-btn:hover {
+  background-color: var(--bt-color-hover);
+  color: var(--primary-color);
+}
+
+.about-text-content {
+    font-family: Helvetica !important;    
+    color: var(--text-dark-color);
+}
+
+.about-text-content h1 {
+    font-weight: 700;
+    font-size: 9.6rem;
+    letter-spacing: -3%;
+    margin-bottom: 30px;
+}
+
+.about-text-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+@keyframes slide-in-about {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slide-out-about {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-modal-content {
+    padding: 24px 15px;
+    max-width: 95vw;
+    height: 100vh;
+  }
+
+  .about-text-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-text-content p {
+    font-size: 1rem;
+  }
+}

@@ -124,6 +124,6 @@
     padding: 24px 15px; /* Padding reduzido para caber melhor */
     max-width: 95vw;
     height: 100%;
-    overflow-x: scroll;
+    overflow-y: scroll;
   }
 }

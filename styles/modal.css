@@ -43,7 +43,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 100%;
+    height: 100vh;
     
     overflow-y: auto; /* ⬅️ permite o scroll vertical */
     -webkit-overflow-scrolling: touch; /* ⬅️ deixa o scroll suave em iPhone/iOS */
