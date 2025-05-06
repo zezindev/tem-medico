@@ -28,7 +28,7 @@
     transition: background-color 200ms ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
     .card {
         width: calc(33% - 72px); /* 3 por linha */
     }
