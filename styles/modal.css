@@ -93,7 +93,7 @@
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    font-size: 27px;
+    font-size: 25px;
     transition: background-color 200ms ease-in-out;
 }
 
@@ -108,7 +108,8 @@
     color: var(--text-dark-color);
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); 
-    border-radius: 50%;
+    border-radius: 100px;
+    padding: 16px;
     border: none;
     cursor: pointer;
 
