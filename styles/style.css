@@ -35,7 +35,7 @@ body {
     --border-color: #B8BAC1;
     --text-color-light: #B8BAC1;
     --text-dark-color: #181818;
-    --icon-color-hover: rgba(24, 24, 24, 0.56);
+    --icon-color-hover: #1818188F;
     --bt-color-disabled: #95A3F5;
     --bt-color-hover: #2B48EC;
     --bt-color-clicked: #142DB8;
@@ -96,7 +96,7 @@ nav.menu {
 .about a {
     text-decoration: none;
     color: var(--text-dark-color);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 2rem;
 }
 
@@ -138,6 +138,13 @@ nav.menu {
     flex: 1;
     text-align: left;
     white-space: nowrap;
+
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 28px;
+    letter-spacing: -3%;
+
+    margin-bottom: -2px;
 }
 
 /* Dropdown menu */
@@ -327,33 +334,18 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 
 /* Empty State */
 #empty-state {
-    height: 50vh;
+    height: 30vh;
     display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-}
-
-#empty-state img {
-    width: 106px;
-}
-
-#empty-state-texts {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #empty-state-texts p {
     margin: 0;
     padding: 0;
-    font-family: Helvetica;
     font-weight: 700;
     font-size: 20px;
     line-height: 28px;
     letter-spacing: -3%;
-    text-align: center;
+    color: var(--border-color);
 }
 
 @media (max-width: 768px),
