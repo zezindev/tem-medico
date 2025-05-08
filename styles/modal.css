@@ -2,10 +2,11 @@
     --primary-color: #F5F6F8;
     --bt-icon-color: rgba(245, 246, 248, 0.239);
     --card-color: #ffffff;
-    --card-border-color: #E7E8EA; 
-    --border-color: #B8BAC1; 
-    --text-color-light: #B8BAC1; 
+    --card-border-color: #E7E8EA;
+    --border-color: #B8BAC1;
+    --text-color-light: #B8BAC1;
     --text-dark-color: #181818;
+    --icon-color-hover: #1818188F;
     --bt-color-disabled: #95A3F5;
     --bt-color-hover: #2B48EC;
     --bt-color-clicked: #142DB8;
