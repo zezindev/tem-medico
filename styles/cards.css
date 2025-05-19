@@ -54,9 +54,12 @@
 }
 
 .card-header h2 {
+    font-size: clamp(2rem, 2.2vw, 2.4rem);
+    line-height: 32px;
+    letter-spacing: -3%;
+    font-family: Helvetica;
+    font-weight: 700;
     color: var(--text-dark-color);
-    font-size: clamp(2rem, 2.2vw, 3.2rem);
-    font-weight: bold;
 
     margin-bottom: 16px;
     margin-top: 0;
@@ -68,15 +71,15 @@
     margin-bottom: 160px;
 
     color: var(--text-dark-color);
-    font-size: 2.2rem;
-    font-size: clamp(1.6rem, 1.8vw, 2.2rem);
+    font-size: clamp(1.6rem, 1.6vw, 1.6rem);
+
+    gap: 16px;
 }
 
 .doctor-photo {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin-right: 10px;
 }
 
 .card-body {

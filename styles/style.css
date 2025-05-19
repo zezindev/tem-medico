@@ -333,8 +333,10 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 
 @media (max-width: 768px) {
     .bt-form {
+        height: 80px;
+        width: 80px;
         margin-right: 20px;
-        bottom: 58px;
+        bottom: 20px;
     }
 }
 
@@ -359,10 +361,6 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
     #empty-state {
         height: 30vh;
         margin-bottom: 40px;
-    }
-
-    #empty-state img {
-        width: 90px;
     }
 }
 
