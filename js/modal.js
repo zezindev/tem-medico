@@ -7,21 +7,33 @@ const form = document.getElementById('form');
 const cardsContainer = document.querySelector('.card-container');
 
 document.querySelector('.clean-button').addEventListener('click', () => {
-    const form = document.getElementById('form');
     form.reset();
 });
 
-// Função para formatar o horário para o formato HH:MM
-function formatHourInput(event) {
-    let value = event.target.value;
+// Máscara para telefone brasileiro
+function formatPhoneInput(event) {
+    let value = event.target.value.replace(/\D/g, '');
+    if (value.length > 11) value = value.slice(0, 11);
+    if (value.length > 6) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+    } else if (value.length > 2) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    } else if (value.length > 0) {
+        value = `(${value}`;
+    }
+    event.target.value = value;
+}
 
-    value = value.replace(/\D/g, '');
-    if (value.length > 2) {
-        value = value.slice(0, 2) + ':' + value.slice(2, 4);
-    }
-    if (value.length > 5) {
-        value = value.slice(0, 5);
-    }
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+    phoneInput.addEventListener('input', formatPhoneInput);
+}
+
+// Máscara de horário
+function formatHourInput(event) {
+    let value = event.target.value.replace(/\D/g, '');
+    if (value.length > 2) value = value.slice(0, 2) + ':' + value.slice(2, 4);
+    if (value.length > 5) value = value.slice(0, 5);
     event.target.value = value;
 }
 
@@ -31,17 +43,12 @@ startHoursField.addEventListener('input', formatHourInput);
 endHoursField.addEventListener('input', formatHourInput);
 
 function formatCityName(city) {
-    return city
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, char => char.toUpperCase());
+    return city.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
 function formatSpecialtyName(specialty) {
     if (!specialty) return '';
-    return specialty
-        .toLowerCase()
-        .replace(/-/g, ' ')
-        .replace(/\b\p{L}/gu, char => char.toUpperCase());
+    return specialty.toLowerCase().replace(/-/g, ' ').replace(/\b\p{L}/gu, char => char.toUpperCase());
 }
 
 btForm.addEventListener('click', () => {
@@ -51,7 +58,6 @@ btForm.addEventListener('click', () => {
         modal.querySelector('.modal-content').style.animation = 'slide-in-content 0.5s ease-out forwards';
     }, 10);
     document.body.classList.add('modal-open');
-    document.body.style.overflow = 'hidden';
 });
 
 closeBtn.addEventListener('click', () => {
@@ -61,18 +67,8 @@ closeBtn.addEventListener('click', () => {
         modal.classList.remove('show');
         modal.style.display = 'none';
         document.body.classList.remove('modal-open');
-        document.body.style.overflow = '';
     }, 200);
 });
-
-function checkOtherPlan(select) {
-    const otherPlanInput = document.getElementById("otherPlan");
-    if (select.value === "outros") {
-        otherPlanInput.style.display = "block";
-    } else {
-        otherPlanInput.style.display = "none";
-    }
-}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -86,6 +82,7 @@ form.addEventListener('submit', (e) => {
     const startHours = document.getElementById('start-hours').value;
     const endHours = document.getElementById('end-hours').value;
     const clinic = document.getElementById('clinic').value;
+    const phone = document.getElementById('phone').value.replace(/\D/g, '');
 
     const photoInput = document.getElementById('photo');
     const photoFile = photoInput.files[0];
@@ -179,15 +176,17 @@ form.addEventListener('submit', (e) => {
     card.appendChild(cardBody);
     card.appendChild(cardFooter);
 
+    // Redireciona para WhatsApp ao clicar no card
+    card.addEventListener('click', () => {
+        window.open(`https://wa.me/55${phone}`, '_blank');
+    });
+
     cardsContainer.appendChild(card);
-    form.reset(); // limpa o formulário se quiser
-    verificarEstadoVazio(); // atualiza contador e exibe/esconde empty state
+    verificarEstadoVazio();
+    form.reset();
 
-
-    // Fecha o modal e limpa o formulário
     modal.classList.remove('show');
     modal.style.display = 'none';
     document.body.classList.remove('modal-open');
     document.body.style.overflow = '';
-    form.reset();      
 });
