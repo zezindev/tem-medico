@@ -190,3 +190,39 @@ form.addEventListener('submit', (e) => {
     document.body.classList.remove('modal-open');
     document.body.style.overflow = '';
 });
+
+const formFields = [
+    'specialty',
+    'name',
+    'plans',
+    'city',
+    'start-hours',
+    'end-hours',
+    'clinic',
+    'phone'
+].map(id => document.getElementById(id));
+
+const submitButton = form.querySelector('button');
+
+// Verifica se todos os campos estão preenchidos
+function verificarCamposPreenchidos() {
+    const todosPreenchidos = formFields.every(field => field && field.value.trim() !== '');
+    
+    if (todosPreenchidos) {
+        submitButton.classList.add('enabled');
+        submitButton.disabled = false;
+    } else {
+        submitButton.classList.remove('enabled');
+        submitButton.disabled = true;
+    }
+}
+
+// Verifica os campos em tempo real
+formFields.forEach(field => {
+    field.addEventListener('input', verificarCamposPreenchidos);
+});
+
+// Desabilita botão ao carregar página
+window.addEventListener('DOMContentLoaded', () => {
+    verificarCamposPreenchidos();
+});

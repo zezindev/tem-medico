@@ -9,7 +9,7 @@
     --icon-color-hover: #1818188F;
     --bt-color-disabled: #95A3F5;
     --bt-color-hover: #2B48EC;
-    --bt-color-clicked: #142DB8;
+    --bt-color-enable: #142DB8;
 }
 
 form {
@@ -160,7 +160,9 @@ form input{
 }
 
 form button {
-    cursor: pointer;
+    cursor: not-allowed; /* Fica como "não clicável" inicialmente */
+    pointer-events: none; /* Bloqueia hover e clique por padrão */
+
     width: 139px;
     height: 72px;
     border-radius: 999px;
@@ -182,7 +184,13 @@ form button {
     transition: background-color 200ms ease-in-out;
 }
 
-form button:hover {
+form button.enabled {
+    cursor: pointer;
+    background-color: var(--bt-color-enable);
+    pointer-events: auto; /* Ativa interação */
+}
+
+form button.enabled:hover {
     background-color: var(--bt-color-hover);
 }
 
