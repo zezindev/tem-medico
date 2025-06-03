@@ -1,5 +1,7 @@
 const menuDate = document.querySelector('.menu-date');
 const dropdownMenu = document.getElementById('dropdownMenu');
+const itens = document.querySelectorAll('#dropdownMenu li');
+const dateText = document.querySelector('.date-text');
 
 // Alterna o dropdown ao clicar no menu
 menuDate.addEventListener('click', (e) => {
@@ -8,21 +10,26 @@ menuDate.addEventListener('click', (e) => {
 });
 
 // Lógica ao clicar em uma opção do dropdown
-document.querySelectorAll('#dropdownMenu li').forEach(item => {
+itens.forEach(item => {
   item.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita o fechamento antes da seleção
+    e.stopPropagation();
 
-    document.querySelectorAll('#dropdownMenu li').forEach(li => {
-      li.classList.remove('active');
-      li.querySelector('input').checked = false;
+    // Remove active e uncheck apenas dos outros itens
+    itens.forEach(li => {
+      if (li !== item) {
+        li.classList.remove('active');
+        li.querySelector('input').checked = false;
+      }
     });
 
+    // Marca o item clicado como ativo
     item.classList.add('active');
     item.querySelector('input').checked = true;
 
-    const textoSelecionado = item.innerText;
-    document.querySelector('.date-text').textContent = textoSelecionado;
+    // Atualiza o texto
+    dateText.textContent = item.innerText;
 
+    // Fecha o dropdown
     dropdownMenu.classList.add('hidden');
 
     // Aqui você pode chamar sua função de filtragem
@@ -36,4 +43,3 @@ document.addEventListener('click', (e) => {
     dropdownMenu.classList.add('hidden');
   }
 });
-

@@ -239,6 +239,69 @@ input[type="checkbox"]:checked + .checkmark .check-icon {
 .dropdown-menu li.active span:last-child {
     color: var(--bt-color-clicked);
 }
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.input-wrapper input[type="date"] {
+  flex: 1;
+  font-family: Helvetica;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 40px;
+  letter-spacing: -3%;
+  color: var(--text-dark-color);
+  background: transparent;
+  border: none;
+  outline: none;
+  caret-color: var(--text-dark-color);
+  padding: 10px;
+}
+
+.input-wrapper input[type="date"]::placeholder {
+  color: var(--text-color-light);
+}
+
+.calendar-icon-wrapper {
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.calendar-icon-wrapper img {
+  width: 20px;
+  transition: filter 0.2s;
+}
+
+.calendar-icon-wrapper:hover img {
+  content: url('./assets/icons/calendar-hover.svg');
+}
+
+/* Estilo para o <select> recorrência */
+select.label-form {
+  font-family: Helvetica;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 40px;
+  letter-spacing: -3%;
+  color: var(--text-dark-color);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  outline: none;
+  padding: 8px 4px;
+  margin-left: 8px;
+}
+
+select.label-form:focus {
+  outline: none;
+  border-bottom: 1px solid var(--border-color);
+}
 
 /* Hero section */
 .hero {

@@ -50,6 +50,28 @@
               </span>
             </details>
 
+            <details class="details">
+              <summary class="sumary-title">Como alterar a agenda de um(a) médico(a)?</summary>
+              <span>
+                Se você conhece um(a) médico(a) que merece estar no Tem Médico, preencha nosso formulário com as informações básicas. Você pode adicionar links para chat de agendamento — qualquer informação que ajude outras pessoas a encontrá-lo mais facilmente.
+              </span>
+            </details>
+
+            <details class="details">
+              <summary class="sumary-title">Como posso remover meu nome?</summary>
+              <span>
+                Se seu nome está no diretório e você quer removê-lo, é só mandar um e-mail para temmedico@gmail.com.
+              </span>
+            </details>
+
+            <details class="details">
+              <summary class="sumary-title">Quem está por trás dessa missão?</summary>
+              <span>
+                João Figueiredo <br>
+                José Lucas Rodrigues
+              </span>
+            </details>
+
           </div>
         </div>
       </div>
@@ -198,14 +220,20 @@
         />
 
 
-        <input
-          type="date"
-          id="date"
-          name="date"
-          placeholder="Data"
-          required
-          class="label-form"
-        />
+        <div class="input-wrapper">
+          <input
+            type="date"
+            id="date"
+            name="date"
+            placeholder="Data"
+            required
+            class="label-form"
+          />
+          <label for="date" class="calendar-icon-wrapper">
+            <img src="./assets/icons/calendar.svg" alt="Ícone de calendário" />
+          </label>
+        </div>
+
 
         <div class="time-schedule">
           <label for="start-hours">De</label>
@@ -228,6 +256,38 @@
             class="label-form-schedule"
           />
         </div>
+
+        <div class="time-schedule">
+          <label for="start-hours">De</label>
+          <input
+            type="text"
+            id="start-hours"
+            name="start-hours"
+            placeholder="08:00"
+            required
+            class="label-form-schedule"
+          />
+
+          <label for="end-hours">à</label>
+          <input
+            type="text"
+            id="end-hours"
+            name="end-hours"
+            placeholder="18:00"
+            required
+            class="label-form-schedule"
+          />
+
+          <select id="recurrence" name="recurrence" class="label-form">
+            <option value="" disabled selected>Não se repete</option>
+            <option value="diario">Diário (segunda à sexta)</option>
+            <option value="semanal">Semanalmente</option>
+            <option value="2semanas">A cada duas semanas</option>
+            <option value="3semanas">A cada três semanas</option>
+            <option value="4semanas">A cada quatro semanas</option>
+          </select>
+        </div>
+
 
         <button type="submit">Enviar</button>
       </form>
