@@ -86,7 +86,6 @@ form.addEventListener('submit', (e) => {
 
     const photoInput = document.getElementById('photo');
     const photoFile = photoInput.files[0];
-    const photoUrl = photoFile ? URL.createObjectURL(photoFile) : './assets/Avatar.png';
 
     const card = document.createElement('div');
     card.classList.add('card');
@@ -101,15 +100,19 @@ form.addEventListener('submit', (e) => {
     const doctorInfo = document.createElement('div');
     doctorInfo.classList.add('doctor-info');
 
-    const doctorPhoto = document.createElement('img');
-    doctorPhoto.src = photoUrl;
-    doctorPhoto.alt = 'Foto do médico';
-    doctorPhoto.classList.add('doctor-photo');
-
     const doctorName = document.createElement('span');
     doctorName.textContent = name;
 
-    doctorInfo.appendChild(doctorPhoto);
+    // Exibe a imagem apenas se o usuário tiver enviado uma
+    if (photoFile) {
+        const photoUrl = URL.createObjectURL(photoFile);
+        const doctorPhoto = document.createElement('img');
+        doctorPhoto.src = photoUrl;
+        doctorPhoto.alt = 'Foto do médico';
+        doctorPhoto.classList.add('doctor-photo');
+        doctorInfo.appendChild(doctorPhoto);
+    }
+
     doctorInfo.appendChild(doctorName);
 
     cardHeader.appendChild(cardTitle);

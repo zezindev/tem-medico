@@ -114,6 +114,12 @@ nav.menu {
     font-size: 1.8rem;
 }
 
+@media (max-width: 768px) {
+    .menu-icons {
+        justify-content: flex-start;
+    }
+}
+
 .search-trigger img {
     width: 24px;
     height: 24px;
